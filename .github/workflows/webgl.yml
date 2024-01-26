@@ -6,7 +6,7 @@ on:
 jobs:
   buildAndDeployWebGL:
     name: Build and Deploy WebGL
-    runs-on: x64
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
         with:
