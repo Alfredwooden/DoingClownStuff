@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 // using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ClownAI : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class ClownAI : MonoBehaviour
 
     private GameObject player;
     private Vector3 targetPosition;
+    private NavMeshAgent clownAgent;
 
     // Start is called before the first frame update
     void Start()
@@ -25,16 +27,17 @@ public class ClownAI : MonoBehaviour
         collider = GetComponent<Collider>();
         audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
+        clownAgent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (!chasing) { return; }
-        if (Vector3.Distance(transform.position, player.transform.position) > stoppingDistance)
+
+        if (Vector3.Distance(transform.position, player.transform.position) > clownAgent.stoppingDistance)
         {
-            transform.LookAt(player.transform);
-            transform.position += transform.forward * moveSpeed * Time.deltaTime;
+            clownAgent.destination = player.transform.position;
         }
     }
 
