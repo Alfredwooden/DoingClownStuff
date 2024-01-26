@@ -34,6 +34,6 @@ jobs:
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
           CHANNEL: html
-          ITCH_GAME: hunter-tactics-3d
+          ITCH_GAME: clownstuff
           ITCH_USER: Alfredwooden
           PACKAGE: build/WebGL
