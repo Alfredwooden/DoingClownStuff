@@ -13,6 +13,7 @@ public class ClownAI : MonoBehaviour
 
     //For use with an empty gameobject to quickly move our clown to the default starting chase position
     private GameObject activeOrientationPlaceholder;
+    private AudioSource audioSource;
     private Collider collider;
 
     private GameObject player;
@@ -22,6 +23,7 @@ public class ClownAI : MonoBehaviour
     void Start()
     {
         collider = GetComponent<Collider>();
+        audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -40,6 +42,7 @@ public class ClownAI : MonoBehaviour
     private void AggroClown()
     {
         resetOrientation();
+        audioSource.Stop();
         collider.enabled = true;
         chasing = true;
     }
