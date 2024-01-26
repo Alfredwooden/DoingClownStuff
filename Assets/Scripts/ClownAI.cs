@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal;
+// using UnityEditorInternal;
 using UnityEngine;
 
 public class ClownAI : MonoBehaviour
@@ -20,7 +20,7 @@ public class ClownAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(transform.position, player.transform.position) > stoppingDistance)
+        if (Vector3.Distance(transform.position, player.transform.position) > stoppingDistance)
         {
             transform.LookAt(player.transform);
             transform.position += transform.forward * moveSpeed * Time.deltaTime;
