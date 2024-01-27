@@ -32,10 +32,10 @@ public class ObjectBounce : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log("Collision: " + collision.contacts[0].point);
-        if (collision.contacts[0].point.y > 0.1f)
+        Debug.Log("Collision: " + collision.GetContact(0).point);
+        if (collision.GetContact(0).point.y > 0.1f)
         {
-            direction = transform.position - collision.contacts[0].point;
+            direction = transform.position - collision.GetContact(0).point;
             direction.y = 0.75f;
             rb.AddForce(direction * force, ForceMode.Impulse);
             audioSource.Play();
