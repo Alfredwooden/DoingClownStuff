@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FaceCamera : MonoBehaviour
 {
-    Camera mainCamera;
+    [SerializeField] Camera mainCamera;
 
     void Start()
     {
