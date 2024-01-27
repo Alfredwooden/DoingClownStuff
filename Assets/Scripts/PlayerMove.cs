@@ -50,8 +50,6 @@ public class PlayerMove : MonoBehaviour
 
         downwards += gravity * Time.deltaTime;
 
-        Debug.Log("down: " + downwards + " isGrounded: " + isGrounded);
-
         // Move the character
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), downwards, Input.GetAxis("Vertical"));
         characterController.Move(move * Time.deltaTime * playerSpeed);

@@ -9,28 +9,30 @@ public class ClownAI : MonoBehaviour
 {
 
     [SerializeField]
-    bool chasing = false;
+    bool chasing;
     AudioListener listener;
 
     //For use with an empty gameobject to quickly move our clown to the default starting chase position
     private GameObject activeOrientationPlaceholder;
     private AudioSource audioSource;
-    private Collider collider;
+    private Collider clownCollider;
 
     private GameObject player;
     private Vector3 targetPosition;
     private NavMeshAgent clownAgent;
     //Change to GameManager
-    private GameOver gameOver;
+    private GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
-        collider = GetComponent<Collider>();
+        clownCollider = GetComponent<Collider>();
         audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         clownAgent = GetComponent<NavMeshAgent>();
-        //gameOver = GameObject.Find("GameOver").GetComponent<GameOver>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        chasing = false;
     }
 
     // Update is called once per frame
@@ -49,7 +51,7 @@ public class ClownAI : MonoBehaviour
     {
         resetOrientation();
         audioSource.Stop();
-        collider.enabled = true;
+        clownCollider.enabled = true;
         chasing = true;
     }
 
@@ -64,7 +66,7 @@ public class ClownAI : MonoBehaviour
     {
         if(collision.gameObject.name == "Player")
         {
-            gameOver.EndGame();
+            gm.EndGame();
         }
     }
 }
