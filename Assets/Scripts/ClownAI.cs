@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class ClownAI : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class ClownAI : MonoBehaviour
     private NavMeshAgent clownAgent;
     //Change to GameManager
     private GameManager gm;
+    private Image clownImage;
+    private Vector3 direction;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +33,7 @@ public class ClownAI : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         player = GameObject.FindGameObjectWithTag("Player");
         clownAgent = GetComponent<NavMeshAgent>();
-
+        clownImage = GetComponentInChildren<Image>();
         chasing = false;
     }
 
@@ -42,6 +45,17 @@ public class ClownAI : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) > clownAgent.stoppingDistance)
         {
             clownAgent.destination = player.transform.position;
+        }
+
+        direction = transform.position - player.transform.position;
+
+        if (direction.x > 0 && clownImage.transform.localScale.x < 0)
+        {
+            clownImage.transform.localScale = new Vector3(clownImage.transform.localScale.x * -1, clownImage.transform.localScale.y, clownImage.transform.localScale.z);
+        }
+        else if (direction.x < 0 && clownImage.transform.localScale.x > 0)
+        {
+            clownImage.transform.localScale = new Vector3(clownImage.transform.localScale.x * -1, clownImage.transform.localScale.y, clownImage.transform.localScale.z);
         }
     }
 
