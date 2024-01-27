@@ -7,10 +7,8 @@ using UnityEngine.AI;
 
 public class ClownAI : MonoBehaviour
 {
-    bool chasing = false;
+    bool chasing = true;
     AudioListener listener;
-    public float moveSpeed = 1.0f;
-    public float stoppingDistance = 0.01f;
 
     //For use with an empty gameobject to quickly move our clown to the default starting chase position
     private GameObject activeOrientationPlaceholder;
@@ -20,6 +18,8 @@ public class ClownAI : MonoBehaviour
     private GameObject player;
     private Vector3 targetPosition;
     private NavMeshAgent clownAgent;
+    //Change to GameManager
+    private GameOver gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,7 @@ public class ClownAI : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         clownAgent = GetComponent<NavMeshAgent>();
+        gameOver = GameObject.Find("GameOver").GetComponent<GameOver>();
     }
 
     // Update is called once per frame
@@ -55,5 +56,13 @@ public class ClownAI : MonoBehaviour
     {
         transform.position = activeOrientationPlaceholder.transform.position;
         transform.rotation = activeOrientationPlaceholder.transform.rotation;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Player")
+        {
+            gameOver.EndGame();
+        }
     }
 }
