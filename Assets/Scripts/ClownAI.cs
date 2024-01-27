@@ -30,7 +30,7 @@ public class ClownAI : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         clownAgent = GetComponent<NavMeshAgent>();
-        gameOver = GameObject.Find("GameOver").GetComponent<GameOver>();
+        //gameOver = GameObject.Find("GameOver").GetComponent<GameOver>();
     }
 
     // Update is called once per frame
