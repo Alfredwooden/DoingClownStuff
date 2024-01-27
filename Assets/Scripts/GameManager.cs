@@ -73,10 +73,12 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
             pauseScreen.enabled = false;
         }
+        pauseScreen.GetComponent<AudioSource>().Play();
     }
 
     public void QuitGame()
     {
+        pauseScreen.GetComponent<AudioSource>().Play();
         Application.Quit();
     }
 }
