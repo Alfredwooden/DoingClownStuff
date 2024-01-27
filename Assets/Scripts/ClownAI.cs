@@ -7,7 +7,9 @@ using UnityEngine.AI;
 
 public class ClownAI : MonoBehaviour
 {
-    bool chasing = true;
+
+    [SerializeField]
+    bool chasing = false;
     AudioListener listener;
 
     //For use with an empty gameobject to quickly move our clown to the default starting chase position
