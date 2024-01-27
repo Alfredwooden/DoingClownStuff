@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 347744785067985749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6651314263670984966}
@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 9115251424335229669}
   - component: {fileID: 2018911521164930803}
   - component: {fileID: 8251483525040415971}
+  - component: {fileID: 8400006980433012816}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -104,7 +105,7 @@ RectTransform:
   m_GameObject: {fileID: 1200546709541364392}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5283919588670031787}
@@ -179,6 +180,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8400006980433012816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200546709541364392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded5a99a2a38c45ac95657be8791a40e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
 --- !u!1 &7661071688809306875
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +206,6 @@ GameObject:
   - component: {fileID: 7980476082598897394}
   - component: {fileID: 2002596537969891147}
   - component: {fileID: 8371738720552944036}
-  - component: {fileID: 1022602753281179751}
   m_Layer: 0
   m_Name: Clown
   m_TagString: Untagged
@@ -209,12 +222,12 @@ Transform:
   m_GameObject: {fileID: 7661071688809306875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6651314263670984966}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &2525694144595625885
 CapsuleCollider:
@@ -301,16 +314,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chasing: 0
---- !u!114 &1022602753281179751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7661071688809306875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ded5a99a2a38c45ac95657be8791a40e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
