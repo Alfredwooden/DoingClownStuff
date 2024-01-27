@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c760dc6802261d94b84a143907941289, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8aa323745bc7b4e1f933e62d7aa0e4cc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -301,4 +301,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
-  maxRotationX: 10
+  maxXRotation: 10
