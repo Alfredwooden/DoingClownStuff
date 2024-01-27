@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] public float jump;
     private float downwards;
     private AudioSource audioSource;
+    private Image playerImage;
 
     // Jump Checks
     private Transform groundCheck;
@@ -21,7 +23,6 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         groundCheck = GameObject.Find("GroundCheck").transform;
         groundMask = LayerMask.GetMask("Ground");
 
@@ -31,6 +32,8 @@ public class PlayerMove : MonoBehaviour
 
         playerSpeed = 10f;
         characterController = GetComponent<CharacterController>();
+        audioSource = GetComponent<AudioSource>();
+        playerImage = GetComponentInChildren<Image>();
     }
 
     // Update is called once per frame
@@ -55,6 +58,15 @@ public class PlayerMove : MonoBehaviour
         // Move the character
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), downwards, Input.GetAxis("Vertical"));
         characterController.Move(move * Time.deltaTime * playerSpeed);
+
+        if(Input.GetAxis("Horizontal") > 0 && playerImage.transform.localScale.x > 0)
+        {
+            playerImage.transform.localScale = new Vector3(playerImage.transform.localScale.x * -1, playerImage.transform.localScale.y, playerImage.transform.localScale.z);
+        }
+        else if(Input.GetAxis("Horizontal") < 0 && playerImage.transform.localScale.x < 0)
+        {
+            playerImage.transform.localScale = new Vector3(playerImage.transform.localScale.x * -1, playerImage.transform.localScale.y, playerImage.transform.localScale.z);
+        }
 
         if(Input.GetKeyDown(KeyCode.Z) && !audioSource.isPlaying)
         {
