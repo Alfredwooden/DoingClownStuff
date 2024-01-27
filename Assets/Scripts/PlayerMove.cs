@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float gravity;
     [SerializeField] public float jump;
     private float downwards;
+    private AudioSource audioSource;
 
     // Jump Checks
     private Transform groundCheck;
@@ -20,6 +21,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         groundCheck = GameObject.Find("GroundCheck").transform;
         groundMask = LayerMask.GetMask("Ground");
 
@@ -54,5 +56,9 @@ public class PlayerMove : MonoBehaviour
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), downwards, Input.GetAxis("Vertical"));
         characterController.Move(move * Time.deltaTime * playerSpeed);
 
+        if(Input.GetKeyDown(KeyCode.Z) && !audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
     }
 }
