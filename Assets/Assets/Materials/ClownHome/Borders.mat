@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8860793609515331427
+--- !u!114 &-5427790349834503405
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: lowrunnerwall
+  m_Name: Borders
   m_Shader: {fileID: -6465566751694194690, guid: a29d82c752900fe41a0b346b7c63fdee,
     type: 3}
   m_Parent: {fileID: 0}
@@ -38,9 +38,9 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 8df206b5d29749947a420df0dc7daf23, type: 3}
-        m_Scale: {x: 0.18, y: 0.18}
-        m_Offset: {x: 0, y: 0.84}
+        m_Texture: {fileID: 2800000, guid: 33e3df0e7a6ca344d85836e2b8ac9599, type: 3}
+        m_Scale: {x: 0.5, y: 0.25}
+        m_Offset: {x: 0, y: 0.75}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -62,11 +62,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8df206b5d29749947a420df0dc7daf23, type: 3}
-        m_Scale: {x: 0.18, y: 0.18}
-        m_Offset: {x: 0, y: 0.84}
+        m_Texture: {fileID: 2800000, guid: 33e3df0e7a6ca344d85836e2b8ac9599, type: 3}
+        m_Scale: {x: 0.5, y: 0.25}
+        m_Offset: {x: 0, y: 0.75}
     - _MainTexture:
-        m_Texture: {fileID: 2800000, guid: 8df206b5d29749947a420df0dc7daf23, type: 3}
+        m_Texture: {fileID: 2800000, guid: 33e3df0e7a6ca344d85836e2b8ac9599, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -130,7 +130,7 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
-    - _cutoutSize: 0.5
+    - _cutoutSize: 0.4
     - _falloffSize: 0.05
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
@@ -138,6 +138,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Offset: {r: 0, g: 0.75, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Tiling: {r: 1, g: 0.25, b: 0, a: 0}
+    - _Tiling: {r: 0.5, g: 0.25, b: 0, a: 0}
     - _cutoutPos: {r: 0.5, g: 0.25, b: 0, a: 0}
   m_BuildTextureStacks: []

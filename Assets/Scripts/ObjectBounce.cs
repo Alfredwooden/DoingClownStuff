@@ -7,39 +7,69 @@ public class ObjectBounce : MonoBehaviour
     public float force = 1.0f;
 
     private Rigidbody rb;
-    private Vector3 direction;
     private AudioSource audioSource;
+
+    private bool isScoring;
 
     public GameManager gm;
 
     private void Start()
     {
-        force = 6f;
+        force = Random.Range(1f, 5f);
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+
+        isScoring = false;
 
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void Update()
     {
-        if (transform.position.y < -5)
+        if (transform.position.y < -15)
         {
             Destroy(this.gameObject);
             return;
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Vector3 direction = transform.position - other.transform.position;
+            Bounce(direction);
+
+            if (!isScoring)
+            {
+                StartCoroutine(ScoreTime());
+            }
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision: " + collision.GetContact(0).point);
-        if (collision.GetContact(0).point.y > 0.1f)
+        if (isScoring)
         {
-            direction = transform.position - collision.GetContact(0).point;
-            direction.y = 0.75f;
-            rb.AddForce(direction * force, ForceMode.Impulse);
-            audioSource.Play();
-            gm.happiness++;
+            Vector3 direction = transform.position - collision.GetContact(0).point;
+            Bounce(direction);
         }
+    }
+
+
+    private void Bounce(Vector3 direction)
+    {
+        direction.y = 0.5f;
+        rb.AddForce(direction * force, ForceMode.Impulse);
+        audioSource.Play();
+        gm.happiness++;
+    }
+
+
+    private IEnumerator ScoreTime()
+    {
+        isScoring = true;
+        yield return new WaitForSeconds(3f);
+        isScoring = false;
     }
 }
