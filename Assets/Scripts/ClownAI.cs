@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-// using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -28,9 +27,9 @@ public class ClownAI : MonoBehaviour
     {
         clownCollider = GetComponent<Collider>();
         audioSource = GetComponent<AudioSource>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         player = GameObject.FindGameObjectWithTag("Player");
         clownAgent = GetComponent<NavMeshAgent>();
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         chasing = false;
     }
@@ -64,7 +63,7 @@ public class ClownAI : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "Player")
         {
             gm.EndGame();
         }
