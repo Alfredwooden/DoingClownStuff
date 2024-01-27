@@ -12,14 +12,19 @@ public class ObjectBounce : MonoBehaviour
 
     private void Start()
     {
+        force = 5f;
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        direction = transform.position - collision.contacts[0].point;
-        rb.AddForce(direction * force, ForceMode.Impulse);
-        audioSource.Play();
+        if (collision.contacts[0].point.y > 0.1f)
+        {
+            direction = transform.position - collision.contacts[0].point;
+            direction.y = 0.75f;
+            rb.AddForce(direction * force, ForceMode.Impulse);
+            audioSource.Play();
+        }
     }
 }
