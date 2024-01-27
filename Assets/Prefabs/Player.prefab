@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2400220956846993242}
   - component: {fileID: 7887688668697588452}
   - component: {fileID: 7078649267388631878}
-  - component: {fileID: 1764166207905465962}
   m_Layer: 5
   m_Name: dog_img
   m_TagString: Player
@@ -77,19 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1764166207905465962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750125499608530240}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ded5a99a2a38c45ac95657be8791a40e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
 --- !u!1 &5501440422663524729
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +140,7 @@ Transform:
   - {fileID: 364813884720984851}
   - {fileID: 7967859780626647773}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &5941024463378936570
 CharacterController:
@@ -210,6 +196,7 @@ GameObject:
   - component: {fileID: 8201114836764711774}
   - component: {fileID: 5804367465360157804}
   - component: {fileID: 9033677702963374958}
+  - component: {fileID: 7503652623916177624}
   m_Layer: 5
   m_Name: dog_pic
   m_TagString: Player
@@ -301,3 +288,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7503652623916177624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6923958667128560723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded5a99a2a38c45ac95657be8791a40e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  maxRotationX: 10

@@ -2,19 +2,28 @@ using UnityEngine;
 
 public class FaceCamera : MonoBehaviour
 {
-    [SerializeField] Camera mainCamera;
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private float maxXRotation = 10f;
 
     void Start()
     {
-        mainCamera = Camera.main;
+        if (!mainCamera)
+        {
+            mainCamera = Camera.main;
+        }
     }
 
     void Update()
     {
         if (mainCamera)
         {
-            transform.LookAt(transform.position + mainCamera.transform.rotation * Vector3.forward,
-                mainCamera.transform.rotation * Vector3.up);
+            Vector3 direction = mainCamera.transform.position - transform.position;
+            Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
+
+            Vector3 targetEulerAngles = targetRotation.eulerAngles;
+            targetEulerAngles.x = Mathf.Clamp(targetEulerAngles.x, -maxXRotation, maxXRotation);
+
+            transform.rotation = Quaternion.Euler(targetEulerAngles);
         }
     }
 }
