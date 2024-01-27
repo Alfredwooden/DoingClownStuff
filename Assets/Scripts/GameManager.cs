@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -47,11 +45,18 @@ public class GameManager : MonoBehaviour
             if (happiness >= 100)
             {
                 Time.timeScale = 0;
-                Debug.Log("You Win");
+                EndGame();
             }
 
             happinessBar.value = happiness;
         }
+    }
+
+
+    public void EndGame()
+    {
+        // win screen
+        SceneManager.LoadScene("WinScene");
     }
 
 
