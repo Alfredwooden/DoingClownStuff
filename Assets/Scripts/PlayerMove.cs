@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour
     private Transform groundCheck;
     private float groundDistance = 0.4f;
     private LayerMask groundMask;
-    private bool isGrounded;
+    public bool isGrounded;
 
     // Start is called before the first frame update
     void Start()
