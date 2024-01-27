@@ -55,6 +55,12 @@ public class GameManager : MonoBehaviour
     }
 
 
+    public void EndGame()
+    {
+        // win screen
+    }
+
+
     public void PauseMenu()
     {
         if (!isPaused)
