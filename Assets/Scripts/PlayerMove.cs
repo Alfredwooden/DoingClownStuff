@@ -55,20 +55,19 @@ public class PlayerMove : MonoBehaviour
 
         downwards += gravity * Time.deltaTime;
 
-        // Move the character
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), downwards, Input.GetAxis("Vertical"));
         characterController.Move(move * Time.deltaTime * playerSpeed);
 
-        if(Input.GetAxis("Horizontal") > 0 && playerImage.transform.localScale.x > 0)
+        if (Input.GetAxis("Horizontal") > 0)
         {
-            playerImage.transform.localScale = new Vector3(playerImage.transform.localScale.x * -1, playerImage.transform.localScale.y, playerImage.transform.localScale.z);
+            playerImage.transform.localScale = new Vector3(1, playerImage.transform.localScale.y, playerImage.transform.localScale.z);
         }
-        else if(Input.GetAxis("Horizontal") < 0 && playerImage.transform.localScale.x < 0)
+        else if (Input.GetAxis("Horizontal") < 0)
         {
-            playerImage.transform.localScale = new Vector3(playerImage.transform.localScale.x * -1, playerImage.transform.localScale.y, playerImage.transform.localScale.z);
+            playerImage.transform.localScale = new Vector3(-1, playerImage.transform.localScale.y, playerImage.transform.localScale.z);
         }
 
-        if(Input.GetKeyDown(KeyCode.Z) && !audioSource.isPlaying)
+        if (Input.GetKeyDown(KeyCode.Z) && !audioSource.isPlaying)
         {
             audioSource.Play();
         }
