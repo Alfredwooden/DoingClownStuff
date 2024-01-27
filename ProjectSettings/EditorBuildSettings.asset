@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ClownHouseClownHome.unity
     guid: 29f3022347afeb24594b992e9c679e8b
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: deb001f795ac7354cad79b812f5f1095
   m_configObjects: {}
