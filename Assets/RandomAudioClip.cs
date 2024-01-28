@@ -16,6 +16,13 @@ public class RandomAudioClip : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    
+    // Randomly plays audio track from list
+    public void PlayRandomTrack()
+    {
+        if (audioSource == null && clips.Count > 0) { return; }
+        int p = Random.Range(0, clips.Count);
+
+        audioSource.clip = clips[p];
+        audioSource.Play();
+    }
 }

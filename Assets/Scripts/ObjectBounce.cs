@@ -7,7 +7,9 @@ public class ObjectBounce : MonoBehaviour
     public float force = 1.0f;
 
     private Rigidbody rb;
-    private AudioSource audioSource;
+    //private AudioSource audioSource;
+
+    private RandomAudioClip rac;
 
     private bool isScoring;
 
@@ -17,7 +19,9 @@ public class ObjectBounce : MonoBehaviour
     {
         force = Random.Range(1f, 5f);
         rb = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
+
+        rac = GetComponent<RandomAudioClip>();
 
         isScoring = false;
 
@@ -61,7 +65,8 @@ public class ObjectBounce : MonoBehaviour
     {
         direction.y = 0.5f;
         rb.AddForce(direction * force, ForceMode.Impulse);
-        audioSource.Play();
+        //audioSource.Play();
+        rac.
         gm.happiness++;
     }
 
