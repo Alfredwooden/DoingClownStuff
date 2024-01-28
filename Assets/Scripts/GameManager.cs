@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public float happiness;
+    public float minWinScore = 100;
 
     [Header("HUD and Pause")]
     [Tooltip("The Slider from the HUD.")]
@@ -13,7 +15,13 @@ public class GameManager : MonoBehaviour
     [Tooltip("The pause menu canvas.")]
     public Canvas pauseScreen;
 
+    public Canvas loseScreen;
+
+    public TextMeshProUGUI timer;
+
     private bool isPaused;
+    [SerializeField] private int minutes;
+    [SerializeField] private float seconds;
 
     // Start is called before the first frame update
     void Start()
@@ -24,23 +32,35 @@ public class GameManager : MonoBehaviour
         happinessBar.maxValue = 100;
         happinessBar.value = happiness;
         pauseScreen.enabled = false;
+        loseScreen.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (minutes > 0 && seconds <= 0)
+        {
+            minutes--;
+            seconds = 59;
+        }
+        else if (seconds <= 0 && happiness < minWinScore)
+        {
+            seconds = 0;
+            LoseGame();
+        }
+        else
+        {
+            seconds -= Time.deltaTime;
+            timer.text = minutes.ToString() + " : " + (int)seconds;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
         {
             PauseMenu();
         }
 
         if (!isPaused)
         {
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                happiness += 10;
-            }
-
             // Win Condition
             if (happiness >= 100)
             {
@@ -57,6 +77,12 @@ public class GameManager : MonoBehaviour
     {
         // win screen
         SceneManager.LoadScene("WinScene");
+    }
+
+    public void LoseGame()
+    {
+        loseScreen.enabled = true;
+        Time.timeScale = 0;
     }
 
 
@@ -80,5 +106,12 @@ public class GameManager : MonoBehaviour
     {
         pauseScreen.GetComponent<AudioSource>().Play();
         Application.Quit();
+    }
+
+    public void ExitToMenu()
+    {
+        Time.timeScale = 1;
+        loseScreen.GetComponentInChildren<AudioSource>().Play();
+        SceneManager.LoadSceneAsync(0);
     }
 }
