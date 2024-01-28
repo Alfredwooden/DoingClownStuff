@@ -6,7 +6,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public float happiness;
-    public float minWinScore = 100;
+    public float minWinScore = 5000;
 
     [Header("HUD and Pause")]
     [Tooltip("The Slider from the HUD.")]
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         isPaused = false;
         happiness = 0;
-        happinessBar.maxValue = 100;
+        happinessBar.maxValue = 20000;
         happinessBar.value = happiness;
         pauseScreen.enabled = false;
         loseScreen.enabled = false;
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         if (!isPaused)
         {
             // Win Condition
-            if (happiness >= 100)
+            if (happiness >= minWinScore)
             {
                 Time.timeScale = 0;
                 EndGame();
@@ -93,7 +93,8 @@ public class GameManager : MonoBehaviour
             isPaused = true;
             Time.timeScale = 0;
             pauseScreen.enabled = true;
-        } else
+        }
+        else
         {
             isPaused = false;
             Time.timeScale = 1;

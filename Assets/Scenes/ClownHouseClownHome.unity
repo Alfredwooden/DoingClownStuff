@@ -13224,12 +13224,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b672b5124afac694096451101415e68a, type: 3}
---- !u!20 &1507719577 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 6968030282688711311, guid: b672b5124afac694096451101415e68a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1507719576}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1577743168
 Mesh:
   m_ObjectHideFlags: 0
@@ -17582,6 +17576,11 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2189485003683728922, guid: fd9f35653e2402542ad23d27dee46455,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitToMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 2242466264976363965, guid: fd9f35653e2402542ad23d27dee46455,
         type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
@@ -17597,6 +17596,11 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2265699431104453796, guid: fd9f35653e2402542ad23d27dee46455,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 2636704828349215155, guid: fd9f35653e2402542ad23d27dee46455,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -17606,6 +17610,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 43.33844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063113787719782592, guid: fd9f35653e2402542ad23d27dee46455,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7683846683691472309, guid: fd9f35653e2402542ad23d27dee46455,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8015121606341475066, guid: fd9f35653e2402542ad23d27dee46455,
         type: 3}
