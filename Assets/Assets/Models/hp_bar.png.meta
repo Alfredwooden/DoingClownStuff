@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ca74d402d08ce524daf45872b6216ae0
+guid: c62fe8e3fbac97d478724ce8d5878d5f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,18 +108,106 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: hp_bar_purp
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 350
+        width: 780
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b85e141ea07c75e499fd189efe96dcae
+      internalID: 1219656983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_bar_purp_d
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 235
+        width: 780
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8702c95d739afe5459abc4c7b67060f4
+      internalID: -332099435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_bar_blue
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 117
+        width: 780
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a79f710e891668240b55735bb6d2f702
+      internalID: -1167722623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_bar_blue_d
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 17
+        width: 780
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a93e038449c294468d305b47ddf2f36
+      internalID: -1130151227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: d6570fa5836ced54396fff61bf3b3f0a
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hp_bar_blue: -1167722623
+      hp_bar_blue_d: -1130151227
+      hp_bar_purp: 1219656983
+      hp_bar_purp_d: -332099435
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
