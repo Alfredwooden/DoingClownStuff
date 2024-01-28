@@ -8,6 +8,8 @@ public class PlayerMove : MonoBehaviour
 {
     private CharacterController characterController;
     public float playerSpeed;
+    public bool HasBarked { get; private set; }
+
 
     [SerializeField] private float gravity;
     [SerializeField] public float jump;
@@ -71,6 +73,14 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z) && !audioSource.isPlaying)
         {
             audioSource.Play();
+            HasBarked = true;
+            Debug.Log("Bark");
         }
     }
+
+    public void ResetBark()
+    {
+        HasBarked = false;
+    }
+
 }
