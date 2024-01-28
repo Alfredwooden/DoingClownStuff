@@ -37,10 +37,20 @@ public class ClownAI : MonoBehaviour
         chasing = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (!chasing) { return; }
+        if (!chasing)
+        {
+            PlayerMove playerMove = player.GetComponent<PlayerMove>();
+
+            if (playerMove != null && playerMove.HasBarked)
+            {
+                Debug.Log("Got here");
+                AggroClown();
+                // playerMove.ResetBark();
+            }
+            return;
+        }
 
         if (Vector3.Distance(transform.position, player.transform.position) > clownAgent.stoppingDistance)
         {
@@ -49,11 +59,11 @@ public class ClownAI : MonoBehaviour
 
         direction = transform.position - player.transform.position;
 
-        if (direction.x > 0 && clownImage.transform.localScale.x < 0)
+        if (direction.x > 0 && clownImage.transform.localScale.x > 0)
         {
             clownImage.transform.localScale = new Vector3(clownImage.transform.localScale.x * -1, clownImage.transform.localScale.y, clownImage.transform.localScale.z);
         }
-        else if (direction.x < 0 && clownImage.transform.localScale.x > 0)
+        else if (direction.x < 0 && clownImage.transform.localScale.x < 0)
         {
             clownImage.transform.localScale = new Vector3(clownImage.transform.localScale.x * -1, clownImage.transform.localScale.y, clownImage.transform.localScale.z);
         }
@@ -62,10 +72,11 @@ public class ClownAI : MonoBehaviour
     //Triggered once player honks first time
     private void AggroClown()
     {
-        resetOrientation();
-        audioSource.Stop();
-        clownCollider.enabled = true;
+        Debug.Log("Aggro Clown");
         chasing = true;
+        // resetOrientation();
+        // audioSource.Stop();
+        // clownCollider.enabled = true;
     }
 
     //For use with an empty gameobject to quickly move our clown to the default starting chase position
@@ -77,7 +88,7 @@ public class ClownAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             gm.LoseGame();
         }
