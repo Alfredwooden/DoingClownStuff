@@ -17,7 +17,7 @@ public class ObjectBounce : MonoBehaviour
 
     private void Start()
     {
-        force = Random.Range(1f, 5f);
+        force = Random.Range(3f, 5f);
         rb = GetComponent<Rigidbody>();
         //audioSource = GetComponent<AudioSource>();
 
@@ -66,8 +66,9 @@ public class ObjectBounce : MonoBehaviour
         direction.y = 0.5f;
         rb.AddForce(direction * force, ForceMode.Impulse);
         //audioSource.Play();
-        rac.PlayRandomTrack();
         gm.happiness++;
+
+        rac.PlayRandomTrack();
     }
 
 
