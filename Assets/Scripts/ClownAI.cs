@@ -59,11 +59,11 @@ public class ClownAI : MonoBehaviour
 
         direction = transform.position - player.transform.position;
 
-        if (direction.x > 0 && clownImage.transform.localScale.x < 0)
+        if (direction.x > 0 && clownImage.transform.localScale.x > 0)
         {
             clownImage.transform.localScale = new Vector3(clownImage.transform.localScale.x * -1, clownImage.transform.localScale.y, clownImage.transform.localScale.z);
         }
-        else if (direction.x < 0 && clownImage.transform.localScale.x > 0)
+        else if (direction.x < 0 && clownImage.transform.localScale.x < 0)
         {
             clownImage.transform.localScale = new Vector3(clownImage.transform.localScale.x * -1, clownImage.transform.localScale.y, clownImage.transform.localScale.z);
         }
