@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        minWinScore = 500;
+        minWinScore = 250;
         Time.timeScale = 1;
         isPaused = false;
         happiness = 0;
