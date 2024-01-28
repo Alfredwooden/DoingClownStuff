@@ -6,7 +6,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public float happiness;
-    public float minWinScore = 5000;
+    public float minWinScore = 500;
 
     [Header("HUD and Pause")]
     [Tooltip("The Slider from the HUD.")]
