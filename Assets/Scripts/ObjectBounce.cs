@@ -66,7 +66,7 @@ public class ObjectBounce : MonoBehaviour
         direction.y = 0.5f;
         rb.AddForce(direction * force, ForceMode.Impulse);
         //audioSource.Play();
-        rac.
+        rac.PlayRandomTrack();
         gm.happiness++;
     }
 
