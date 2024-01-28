@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1228900710360828623}
   - component: {fileID: 3924802448326394795}
   - component: {fileID: 5843144448573155422}
+  - component: {fileID: 7750926238650913893}
   m_Layer: 0
   m_Name: Spoon
   m_TagString: Untagged
@@ -29,13 +30,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2823172012595081992}
-  m_LocalRotation: {x: -0.63134646, y: -0, z: -0, w: 0.77550095}
+  m_LocalRotation: {x: -0.63134605, y: 0, z: 0, w: 0.77550125}
   m_LocalPosition: {x: -6.6, y: 1.71, z: 25.5}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -78.299, y: 0, z: 0}
 --- !u!33 &712237525464263793
 MeshFilter:
@@ -245,3 +246,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6941365, y: 7.028139, z: 0.7117294}
   m_Center: {x: 0, y: 2.254209, z: 0.27595708}
+--- !u!114 &7750926238650913893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2823172012595081992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425ccf152d11c744bb0b3c9753234839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: b76ad0ed051c0124b84fc3f057001bac, type: 3}
+  - {fileID: 8300000, guid: c753bbfce03539f408c174a6c8da2ab8, type: 3}
+  - {fileID: 8300000, guid: 00192cad7c42e6b428f3651eeac35594, type: 3}
