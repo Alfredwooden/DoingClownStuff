@@ -6,7 +6,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public float happiness;
-    public float minWinScore = 5000;
+    public float minWinScore;
 
     [Header("HUD and Pause")]
     [Tooltip("The Slider from the HUD.")]
@@ -26,10 +26,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        minWinScore = 1000;
         Time.timeScale = 1;
         isPaused = false;
         happiness = 0;
-        happinessBar.maxValue = 20000;
+        happinessBar.maxValue = minWinScore;
         happinessBar.value = happiness;
         pauseScreen.enabled = false;
         loseScreen.enabled = false;
